@@ -19,5 +19,8 @@
   "homepage": "https://github.com/didiercauvin/elm-restaurants#readme",
   "dependencies": {
     "json-server": "^0.9.6"
+  },
+  "devDependencies": {
+    "webpack": "^3.0.0"
   }
 }

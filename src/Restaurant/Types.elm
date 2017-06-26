@@ -1,12 +1,14 @@
-module App.Types exposing (..)
+module Restaurant.Types exposing (..)
 
+type Msg = 
+    Add
+    
 type alias Restaurant =
     {
         id : Int,
         name : String
     }
 
-type Msg = Increment | Decrement
 
 type alias Restaurants =
     List Restaurant

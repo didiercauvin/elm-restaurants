@@ -1,14 +1,14 @@
 module Restaurant.List exposing (display)
 
 import Html exposing (text, div, h1, span, Html)
-import App.Types exposing (Restaurant, Msg)
+import Restaurant.Types exposing (Restaurant, Msg)
 
 display : List Restaurant -> Html Msg
 display listRestaurant =
     let
         result =
             if ((List.isEmpty listRestaurant)) then
-                div [][text "No restaurants recorded"]
+                div [][text "No restaurants recorded..."]
             else
                 div [] (List.map restaurantRow listRestaurant)
     in

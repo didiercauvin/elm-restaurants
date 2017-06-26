@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html><head><meta charset="UTF-8"><title>App.Types</title><style>html,head,body { padding:0; margin:0; }
+<html><head><meta charset="UTF-8"><title>App</title><style>html,head,body { padding:0; margin:0; }
 body { font-family: calibri, helvetica, arial, sans-serif; }</style><script type="text/javascript">
 (function() {
 'use strict';
@@ -8231,25 +8231,24 @@ var _elm_lang$html$Html_Events$Options = F2(
 	function (a, b) {
 		return {stopPropagation: a, preventDefault: b};
 	});
-var _user$project$App_Types$Restaurant = F2(
+var _user$project$Restaurant_Types$Restaurant = F2(
 	function (a, b) {
 		return {id: a, name: b};
 	});
-var _user$project$App_Types$Decrement = {ctor: 'Decrement'};
-var _user$project$App_Types$Increment = {ctor: 'Increment'};
-var _user$project$App_State$subscriptions = function (model) {
+var _user$project$Restaurant_Types$Add = {ctor: 'Add'};
+var _user$project$Restaurant_State$subscriptions = function (model) {
 	return _elm_lang$core$Platform_Sub$none;
 };
-var _user$project$App_State$update = F2(
-	function (msg, model) {
-		var _p0 = msg;
+var _user$project$Restaurant_State$update = F2(
+	function (action, model) {
+		var _p0 = action;
 		return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
 	});
-var _user$project$App_State$init = {
+var _user$project$Restaurant_State$init = {
 	ctor: '_Tuple2',
 	_0: {
 		ctor: '::',
-		_0: {id: 1, name: 'Resto 1'},
+		_0: {id: 1, name: 'Restaurant 1'},
 		_1: {ctor: '[]'}
 	},
 	_1: _elm_lang$core$Platform_Cmd$none
@@ -8288,7 +8287,7 @@ var _user$project$Restaurant_List$display = function (listRestaurant) {
 		{ctor: '[]'},
 		{
 			ctor: '::',
-			_0: _elm_lang$html$Html$text('No restaurants recorded'),
+			_0: _elm_lang$html$Html$text('No restaurants recorded...'),
 			_1: {ctor: '[]'}
 		}) : A2(
 		_elm_lang$html$Html$div,
@@ -8345,11 +8344,11 @@ var _user$project$Restaurant_List$display = function (listRestaurant) {
 			}
 		});
 };
-var _user$project$App_View$root = function (model) {
-	return _user$project$Restaurant_List$display(model);
+var _user$project$Restaurant_View$restaurantList = function (list) {
+	return _user$project$Restaurant_List$display(list);
 };
-var _user$project$Main$main = _elm_lang$html$Html$program(
-	{init: _user$project$App_State$init, view: _user$project$App_View$root, update: _user$project$App_State$update, subscriptions: _user$project$App_State$subscriptions})();
+var _user$project$App$main = _elm_lang$html$Html$program(
+	{init: _user$project$Restaurant_State$init, view: _user$project$Restaurant_View$restaurantList, update: _user$project$Restaurant_State$update, subscriptions: _user$project$Restaurant_State$subscriptions})();
 var _user$project$Restaurant_Edit$edit = function (restaurant) {
 	return A2(
 		_elm_lang$html$Html$div,
@@ -8394,23 +8393,8 @@ var _user$project$Restaurant_Edit$edit = function (restaurant) {
 };
 var Elm = {};
 Elm['App'] = Elm['App'] || {};
-Elm['App']['State'] = Elm['App']['State'] || {};
-if (typeof _user$project$App_State$main !== 'undefined') {
-    _user$project$App_State$main(Elm['App']['State'], 'App.State', undefined);
-}
-Elm['App'] = Elm['App'] || {};
-Elm['App']['Types'] = Elm['App']['Types'] || {};
-if (typeof _user$project$App_Types$main !== 'undefined') {
-    _user$project$App_Types$main(Elm['App']['Types'], 'App.Types', undefined);
-}
-Elm['App'] = Elm['App'] || {};
-Elm['App']['View'] = Elm['App']['View'] || {};
-if (typeof _user$project$App_View$main !== 'undefined') {
-    _user$project$App_View$main(Elm['App']['View'], 'App.View', undefined);
-}
-Elm['Main'] = Elm['Main'] || {};
-if (typeof _user$project$Main$main !== 'undefined') {
-    _user$project$Main$main(Elm['Main'], 'Main', undefined);
+if (typeof _user$project$App$main !== 'undefined') {
+    _user$project$App$main(Elm['App'], 'App', undefined);
 }
 Elm['Restaurant'] = Elm['Restaurant'] || {};
 Elm['Restaurant']['Edit'] = Elm['Restaurant']['Edit'] || {};
@@ -8421,6 +8405,21 @@ Elm['Restaurant'] = Elm['Restaurant'] || {};
 Elm['Restaurant']['List'] = Elm['Restaurant']['List'] || {};
 if (typeof _user$project$Restaurant_List$main !== 'undefined') {
     _user$project$Restaurant_List$main(Elm['Restaurant']['List'], 'Restaurant.List', undefined);
+}
+Elm['Restaurant'] = Elm['Restaurant'] || {};
+Elm['Restaurant']['State'] = Elm['Restaurant']['State'] || {};
+if (typeof _user$project$Restaurant_State$main !== 'undefined') {
+    _user$project$Restaurant_State$main(Elm['Restaurant']['State'], 'Restaurant.State', undefined);
+}
+Elm['Restaurant'] = Elm['Restaurant'] || {};
+Elm['Restaurant']['Types'] = Elm['Restaurant']['Types'] || {};
+if (typeof _user$project$Restaurant_Types$main !== 'undefined') {
+    _user$project$Restaurant_Types$main(Elm['Restaurant']['Types'], 'Restaurant.Types', undefined);
+}
+Elm['Restaurant'] = Elm['Restaurant'] || {};
+Elm['Restaurant']['View'] = Elm['Restaurant']['View'] || {};
+if (typeof _user$project$Restaurant_View$main !== 'undefined') {
+    _user$project$Restaurant_View$main(Elm['Restaurant']['View'], 'Restaurant.View', undefined);
 }
 
 if (typeof define === "function" && define['amd'])
@@ -8452,4 +8451,4 @@ for (var publicModule in Elm)
 }
 
 }).call(this);
-</script></head><body><script type="text/javascript">Elm.App.Types.fullscreen()</script></body></html>
+</script></head><body><script type="text/javascript">Elm.App.fullscreen()</script></body></html>

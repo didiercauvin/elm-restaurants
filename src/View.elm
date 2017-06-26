@@ -2,11 +2,9 @@ module App.View exposing (root)
 
 import Html exposing (Html)
 
-import App.State exposing (..)
-
-import App.Types exposing (Model, Msg)
-import Restaurant.List exposing (display)
+import Restaurant.Types exposing (Model, Msg)
+import Restaurant.List
 
 root : Model -> Html Msg
 root model =
-    display model
+    Restaurant.List.root model
