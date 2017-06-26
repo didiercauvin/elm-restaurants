@@ -1,12 +1,12 @@
-module Restaurant.Edit exposing (edit)
+module Restaurant.Edit exposing (display)
 
 import Html exposing (div, input, button, span, text, Html)
 import Html.Attributes exposing (placeholder)
 
 import Restaurant.Types exposing (Restaurant, Msg)
 
-edit: Restaurant -> Html Msg
-edit restaurant = 
+display: Restaurant -> Html Msg
+display restaurant = 
     div[]
     [
         span[] [input [placeholder "Enter a name..."][]],
