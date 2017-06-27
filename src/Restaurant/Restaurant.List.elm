@@ -1,9 +1,9 @@
 module Restaurant.List exposing (display)
 
 import Html exposing (text, div, h1, span, Html)
-import Restaurant.Types exposing (Restaurant, Msg)
+import Restaurant.Types exposing (..)
 
-display : List Restaurant -> Html Msg
+display : Restaurants -> Html Msg
 display listRestaurant =
     let
         result =

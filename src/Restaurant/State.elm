@@ -1,16 +1,11 @@
-module Restaurant.State exposing (init, update, subscriptions)
+module Restaurant.State exposing (update)
 
-import Restaurant.Types exposing (Model, Msg)
+import Navigation
 
-init: (Model, Cmd Msg)
-init =
-    ([{id = 1, name = "Restaurant 1"}], Cmd.none)
+import Restaurant.Types exposing (..)
 
 update: Msg -> Model -> (Model, Cmd Msg)
 update action model =
     case action of
-        Restaurant.Types.Add -> (model, Cmd.none)
-
-subscriptions : Model -> Sub Msg
-subscriptions model =
-    Sub.none
+        ShowAll ->
+            (model, Navigation.newUrl "#restaurants")

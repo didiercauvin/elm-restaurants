@@ -1,18 +1,18 @@
 module App exposing (main)
 
 import Html exposing (Html, text, div, program, button, span, h1)
-import Html.Events exposing (onClick)
+import Navigation
 
-import Restaurant.State as State exposing (..)
-import Restaurant.View as View exposing (..)
-import Restaurant.Types exposing (..)
+import App.State exposing (..)
+import App.View as View
+import App.Types exposing (..)
 
 main : Program Never Model Msg
 main =
-    program
+    Navigation.program OnLocationChange
     {
-        init = State.init,
-        view = View.restaurantList,
-        update = State.update,
-        subscriptions = State.subscriptions
+        init = init,
+        view = View.root,
+        update = update,
+        subscriptions = subscriptions
     }

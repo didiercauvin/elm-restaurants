@@ -1,7 +1,7 @@
 module Restaurant.Types exposing (..)
 
-type Msg = 
-    Add
+type Msg =
+    ShowAll
     
 type alias Restaurant =
     {
